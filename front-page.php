@@ -14,22 +14,42 @@ $do_not_duplicate = $post->ID;?>
 <?php endwhile; ?>
 
 <!-- Get Projects Custom Post Type -->
-<section id="projects">
-  <?php
-    $loop = new WP_Query( array( 'post_type' => 'Project' ) );
-  ?>
+<section id="work">
+  <p class="projects-lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  <div class="projects">
+    <?php
+      $loop = new WP_Query( array( 'post_type' => 'Project' ) );
+    ?>
 
-  <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-    <a href="<?php echo get_the_permalink(); ?>"
-      <article class="project">
-        <h2><?php echo get_the_title(); ?></h2>
-        <img src="<?php echo the_field('thumbnail'); ?>"
+    <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+      <article id="project-<?php echo get_the_ID(); ?>" class="project">
+        <h3><?php echo get_the_title(); ?></h3>
+        <img src="<?php echo the_field('thumbnail'); ?>" alt="<?php echo get_the_title(); ?>">
+        <!-- project modal -->
+        <script type="text/javascript">
+        (function ($, root, undefined) {
+          $(function () {
+
+
+            $('#project-<?php echo get_the_ID(); ?>').click(function() {
+              $('.wrapper').append('<article class="project-modal"><img id="closemenubutton" class="closemodal" src="<?php echo get_template_directory_uri(); ?>/img/icons/close.png" alt="Close"><iframe src="<?php echo get_the_permalink(); ?>"></iframe></article>');
+              $('section').css('pointer-events', 'none');
+              $('body').css('overflow', 'hidden');
+            });
+
+            $('section').click(function() {
+              $('project-modal').remove();
+            });
+
+          });
+        })(jQuery, this);
+        </script>
       </article>
-    </a>
-  <?php
-    endwhile;
-    wp_reset_postdata();
-  ?>
+    <?php
+      endwhile;
+      wp_reset_postdata();
+    ?>
+  </div>
 
 </section>
 

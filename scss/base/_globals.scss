@@ -1,0 +1,34 @@
+body {
+  font-family: 'Average', serif;
+  color: $black;
+}
+
+.wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+body, html {
+  min-height: 100%;
+}
+
+a, a:hover, a:active, a:focus {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  min-height: 70vh;
+  padding: 20px;
+}

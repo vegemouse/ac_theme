@@ -1,7 +1,16 @@
 			<!-- footer -->
 			<footer class="footer" role="contentinfo">
 
-				Footer Goes Here
+				<div class="footer-content">
+					<h2>Alex Cady</h2>
+					<p>Website created by <a href="http://maxwellcady.com">Maxwell Cady</a></p>
+					<aside class="social-footer">
+						<a href="https://twitter.com/alexrCady"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/twitter.png" alt="Follow me on Twitter"></a>
+						<a href="https://www.instagram.com/alexrcady/"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/instagram.png" alt="Find me on Instagram"></a>
+						<a href="https://www.linkedin.com/in/alexander-cady-2b6825137/"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/linkedin.png" alt="Find me on LinkedIn"></a>
+					</aside>
+					<p><a href="#top"><img class="uparrow" src="<?php echo get_template_directory_uri(); ?>/img/icons/up.png" alt="Return to Top"></a></p>
+				</div>
 
 			</footer>
 			<!-- /footer -->

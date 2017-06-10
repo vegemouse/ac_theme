@@ -1,0 +1,61 @@
+section#work {
+  .projects-lead {
+    text-align: center;
+    padding: 20px 50px;
+    font-size: 1.5em;
+    margin-bottom: 40px;
+  }
+}
+
+.projects {
+  margin: 0 -20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  &:after {
+    content: "";
+    flex: auto;
+  }
+}
+
+.project {
+  width: 33.33%;
+  height: 200px;
+  position: relative;
+  cursor: pointer;
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+    filter: grayscale(0.5);
+    transition: opacity 200ms ease-in;
+  }
+  h3 {
+    font-family: $header;
+    font-size: 2.5em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 10;
+    opacity: 0;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    letter-spacing: 1px;
+    transition: opacity 200ms ease-in, transform 200ms ease-in;
+  }
+  @media screen and (max-width: 600px) {
+    width: 100%;
+  }
+  &:hover {
+    img {
+      opacity: 0.4;
+    }
+    h3 {
+      opacity: 1;
+    }
+  }
+}

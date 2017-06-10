@@ -1,0 +1,27 @@
+nav.nav {
+  display: flex;
+  align-items: center;
+  font-size: 1.3em;
+  ul {
+    li {
+      display: inline-block;
+      margin-left: 2em;
+      padding: 5px;
+      border-bottom: 2px solid rgba(0, 0, 0, 0);
+      transition: border-bottom 100ms ease-in;
+      &:hover {
+        border-bottom: 2px solid rgba(0, 0, 0, 255);
+      }
+    }
+  }
+  @media screen and (max-width: 785px) {
+    display: none;
+  }
+}
+
+.social {
+  margin-left: 1.5em;
+  img {
+    height: 40px;
+  }
+}

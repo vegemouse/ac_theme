@@ -1,48 +1,41 @@
-<?php get_header(); ?>
+<!doctype html>
+<html <?php language_attributes(); ?> class="no-js">
+	<head>
+		<?php wp_head(); ?>
+	</head>
+	<body <?php body_class(); ?>>
 
-	<main role="main">
-	<!-- section -->
-	<section>
-
-	<?php if (have_posts()): while (have_posts()) : the_post(); ?>
+		<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
 		<!-- article -->
-		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+		<article id="post-<?php the_ID(); ?>" class="post-modal" style="max-width: 100vw; overflow-x: hidden;">
 
 			<!-- post title -->
-			<h1>
-				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-			</h1>
+			<h1><?php the_title(); ?></h1>
 			<!-- /post title -->
 
-			<!-- post details -->
-			<span class="date"><?php the_time('F j, Y'); ?></span>
-			<!-- /post details -->
-
 			<!-- post description -->
-			<p class="description"><?php echo the_field('project_description'); ?></p>
+			<?php echo the_field('project_description'); ?>
 
-      <!-- images -->
-      <div class="photos">
-        <?php
-        $images = get_field('project_images');
-        if( $images ): ?>
-            <ul>
-                <?php foreach( $images as $image ): ?>
-                    <li>
-                        <a href="<?php echo $image['url']; ?>">
-                             <img src="<?php echo $image['sizes']['large']; ?>" alt="<?php echo $image['alt']; ?>" />
-                        </a>
-                        <p><?php echo $image['caption']; ?></p>
-                    </li>
-                <?php endforeach; ?>
-            </ul>
-        <?php endif; ?>
-      </div>
+	    <!-- images -->
+	    <div class="photos">
+	      <?php
+	      $images = get_field('project_images');
+	      if( $images ): ?>
+          <ul>
+            <?php foreach( $images as $image ): ?>
+              <li>
+                 <img src="<?php echo $image['sizes']['large']; ?>" alt="<?php echo $image['alt']; ?>" />
+								<?php if( $image['caption'] ): ?>
+                	<p class="photo-caption"><?php echo $image['caption']; ?></p>
+								<?php endif; ?>
+              </li>
+            <?php endforeach; ?>
+          </ul>
+	      <?php endif; ?>
+	    </div>
 
-			<?php edit_post_link(); // Always handy to have Edit Post Links available ?><br>
-
-      <span onclick="history.go(-1);">Go Back</span>
+			<?php edit_post_link(); // Always handy to have Edit Post Links available ?>
 
 		</article>
 		<!-- /article -->
@@ -60,9 +53,15 @@
 		<!-- /article -->
 
 	<?php endif; ?>
+	<script type="text/javascript">
+	(function ($, root, undefined) {
+		$(function () {
 
-	</section>
-	<!-- /section -->
-	</main>
+			// Make all a tags open in new window so client doesn't need to specify "target _blank" on tags.
+			$('a').attr('target', '_blank');
 
-<?php get_footer(); ?>
+		});
+	})(jQuery, this);
+	</script>
+</body>
+</html>

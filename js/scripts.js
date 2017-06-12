@@ -4,6 +4,10 @@
 
 		'use strict';
 
+		// Scroll Reveal
+		window.sr = ScrollReveal();
+		sr.reveal('.project', { delay: 200 }, 100);
+
 		// Mobile Navigation
 		$(document.getElementById('menubutton')).click(function () {
 			$(document.getElementById('mobilemenu')).css("left", "20vw");

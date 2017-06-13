@@ -4,3 +4,16 @@
     color: $color;
   }
 }
+
+@mixin button($color) {
+  display: block;
+  background: $color;
+  font-family: $header;
+  letter-spacing: 1px;
+  padding: 5px 10px;
+  transition: background 100ms ease-in, color 100ms ease-in;
+  text-transform: uppercase;
+  &:hover, &:active, &:focus {
+    background: darken($color, 2%);
+  }
+}

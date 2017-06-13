@@ -14,9 +14,18 @@
     "wordpress"
   ],
   "devDependencies": {
+    "browserify": "^14.4.0",
     "grunt": "^1.0.1",
+    "grunt-browserify": "^5.0.0",
+    "grunt-contrib-cssmin": "^2.2.0",
+    "grunt-contrib-uglify": "^3.0.1",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-sass": "^2.0.0",
     "load-grunt-tasks": "^3.5.2"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "modernizr": "^3.5.0",
+    "scrollreveal": "^3.3.5"
   }
 }

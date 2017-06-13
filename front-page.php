@@ -7,7 +7,10 @@ $do_not_duplicate = $post->ID;?>
 
   <section id="about">
 
+    <div class="about-content">
       <?php the_content(); ?>
+      <a class="cta" href="/#contact">Let's Work Together</a>
+    </div>
 
   </section>
 

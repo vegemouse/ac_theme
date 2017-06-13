@@ -1,0 +1,8 @@
+.cta {
+  @include button($purple);
+  width: 230px;
+  margin-left: auto;
+  margin-right: auto;
+  animation: wiggle 5s 5s linear infinite;
+  color: $white;
+}

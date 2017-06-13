@@ -11,14 +11,45 @@ module.exports = function(grunt){
         }
       }
     },
+    cssmin: {
+      target: {
+        files: {
+          'style.css': ['style.css']
+        }
+      },
+      options: {
+        keepSpecialComments: 1
+      }
+    },
+    browserify: {
+      dist: {
+        files: {
+          'js/bundle.js': ['js/scripts.js']
+        }
+      }
+    },
+    uglify: {
+      dist: {
+        files: {
+          'js/bundle.js': ['js/bundle.js']
+        }
+      }
+    },
     watch: {
       css: {
         files: '**/*.scss',
-        tasks: ['sass'],
+        tasks: ['sass', 'cssmin'],
       },
+      js: {
+        files: 'js/scripts.js',
+        tasks: ['browserify', 'uglify']
+      }
     }
   });
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-browserify');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.registerTask('default', ['watch']);
 }

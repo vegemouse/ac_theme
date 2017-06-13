@@ -2,6 +2,8 @@
 .menu-icon {
   height: 35px;
   width: 35px;
+  position: relative;
+  right: 35px;
   cursor: pointer;
   @media screen and (min-width: 786px) {
     display: none;
@@ -14,10 +16,11 @@
   position: fixed;
   left: 200vw;
   top: 0;
-  background: $light-orange;
+  background: $purple;
   z-index: 100;
   transition: left 350ms ease-out;
   .menu-icon {
+    filter: invert(1);
     position: absolute;
     right: 35px;
     top: 25px;
@@ -27,7 +30,7 @@
   ul {
     position: absolute;
     letter-spacing: 2px;
-    font-size: 1.5em;
+    font-size: 2em;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -37,6 +40,7 @@
       padding: 5px;
       border-bottom: 2px solid rgba(0, 0, 0, 0);
       transition: opacity 100ms ease-in;
+      filter: invert(1);
       &:hover {
         opacity: 0.8;
       }
@@ -49,7 +53,8 @@
     transform: translateX(-50%);
     text-align: center;
     img {
-      height: 40px;
+      filter: invert(1);
+      height: 50px;
     }
   }
   &:before {

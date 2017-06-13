@@ -1,8 +1,17 @@
 header {
-  padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 3px solid transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 97vw;
+  z-index: 100;
+  padding: 20px;
+  height: 40px;
+  background: $white;
+  transition: height 200ms ease-in, border 100ms ease-in, background 100ms ease-in;
   a img {
     opacity: 1;
     transition: opacity 150ms ease-in-out;
@@ -12,6 +21,15 @@ header {
   }
 }
 
+header.shrinked {
+  height: 10px;
+  border-bottom: 3px solid $purple;
+}
+
+.logo.shrinked {
+  font-size: 1.7em;
+}
+
 h1.logo {
   flex: 1;
   font-family: $header;
@@ -19,19 +37,8 @@ h1.logo {
   font-size: 2em;
   position: relative;
   max-width: 155px;
-  &:after {
-    height: 3px;
-    width: 0;
-    content: "";
-    background: $black;
-    position: absolute;
-    bottom: -7px;
-    left: -1px;
-    transition: width 300ms ease-out;
-  }
+  transition: letter-spacing 200ms ease-in, font-size 200ms ease-in;
   &:hover {
-    &:after {
-      width: 100%;
-    }
+    letter-spacing: 4px;
   }
 }

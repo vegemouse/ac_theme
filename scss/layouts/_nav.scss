@@ -7,11 +7,12 @@ nav.nav {
       display: inline-block;
       margin-left: 2em;
       padding: 5px;
-      border-bottom: 2px solid rgba(0, 0, 0, 0);
-      transition: border-bottom 100ms ease-in;
-      &:hover {
-        border-bottom: 2px solid rgba(0, 0, 0, 255);
-      }
+    }
+  }
+  a {
+    transition: color 100ms ease-in;
+    &:hover {
+      color: $purple;
     }
   }
   @media screen and (max-width: 785px) {

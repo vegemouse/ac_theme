@@ -47,7 +47,10 @@ section#work {
     letter-spacing: 1px;
     transition: opacity 200ms ease-in, transform 200ms ease-in;
   }
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 850px) {
+    width: 50%;
+  }
+  @media screen and (max-width: 550px) {
     width: 100%;
   }
   &:hover {

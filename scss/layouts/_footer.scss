@@ -1,6 +1,6 @@
 footer {
-  height: 30vh;
-  background: $light-purple;
+  height: 34vh;
+  background: lighten($purple, 45%);
   position: relative;
 }
 
@@ -12,16 +12,12 @@ footer {
   text-align: center;
   font-size: 0.8em;
   h2 {
-    padding-top: 10px;
     letter-spacing: 2px;
     font-family: $header;
+    padding: 3px;
   }
   img {
     height: 40px;
-    transition: opacity 200ms ease-in-out;
-    &:hover {
-      opacity: 0.8;
-    }
   }
   .uparrow {
     height: 15px;
@@ -31,8 +27,5 @@ footer {
   }
   a {
     text-decoration: underline;
-  }
-  p {
-    padding: 5px;
   }
 }

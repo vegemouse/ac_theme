@@ -2,7 +2,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 3px solid transparent;
+  border-bottom: 2px solid transparent;
   position: fixed;
   top: 0;
   left: 0;
@@ -22,8 +22,8 @@ header {
 }
 
 header.shrinked {
-  height: 10px;
-  border-bottom: 3px solid $purple;
+  height: 15px;
+  border-bottom: 2px solid $purple;
 }
 
 .logo.shrinked {
@@ -34,11 +34,11 @@ h1.logo {
   flex: 1;
   font-family: $header;
   letter-spacing: 3px;
-  font-size: 2em;
+  font-size: 2.3em;
   position: relative;
-  max-width: 155px;
-  transition: letter-spacing 200ms ease-in, font-size 200ms ease-in;
+  max-width: 175px;
+  transition: font-size 200ms ease-in, color 200ms ease-in;
   &:hover {
-    letter-spacing: 4px;
+    color: $purple
   }
 }

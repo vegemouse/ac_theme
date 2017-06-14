@@ -9,16 +9,28 @@ $do_not_duplicate = $post->ID;?>
 
     <div class="about-content">
       <?php the_content(); ?>
-      <a class="cta" href="/#contact">Let's Work Together</a>
+      <a class="cta about-cta" href="/#contact">Let's Work Together</a>
     </div>
 
   </section>
 
 <?php endwhile; ?>
 
-<!-- Get Projects Custom Post Type -->
 <section id="work">
-  <p class="projects-lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+  <!-- Get Projects Page (ID 129) -->
+  <?php $my_query = new WP_Query('page_id=129');
+  while ($my_query->have_posts()) : $my_query->the_post();
+  $do_not_duplicate = $post->ID;?>
+
+    <div class="projects-lead">
+      <h2>My Work</h2>
+      <?php the_content(); ?>
+    </div>
+
+  <?php endwhile; ?>
+
+  <!-- Get Projects Custom Post Type -->
   <div class="projects">
     <?php
       $loop = new WP_Query( array( 'post_type' => 'Project' ) );
@@ -35,7 +47,7 @@ $do_not_duplicate = $post->ID;?>
 
 
             $('#project-<?php echo get_the_ID(); ?>').click(function() {
-              $('.wrapper').append('<article class="project-modal"><img id="closemenubutton" class="closemodal" src="<?php echo get_template_directory_uri(); ?>/img/icons/close.png" alt="Close"><iframe src="<?php echo get_the_permalink(); ?>"></iframe></article>');
+              $('.wrapper').append('<article class="project-modal"><img class="closemenubutton closemodal" src="<?php echo get_template_directory_uri(); ?>/img/icons/close.png" alt="Close"><iframe src="<?php echo get_the_permalink(); ?>"></iframe><span class="closemodal">[Close]</span></article>');
               $('section').css('pointer-events', 'none');
               $('body').css('overflow', 'hidden');
             });
@@ -63,7 +75,12 @@ $do_not_duplicate = $post->ID;?>
 
   <section id="contact">
 
-      <?php the_content(); ?>
+      <div class="contact-content">
+        <h2>Contact Me</h2>
+        <?php the_content(); ?>
+        <a class="cta" href="mailto:alexandercady@gmail.com">Email Me</a>
+      </div>
+
 
   </section>
 
